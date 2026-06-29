@@ -68,6 +68,10 @@ python3 -m pixcake_use apply-current-record \
 
 ## 工作流
 
+<p align="center">
+  <img src="assets/flow.png" alt="只读探测 → 参数码本 → 离线预览 → 写回渲染" width="820">
+</p>
+
 只读探测拿到结构 → 把 `pf` 数字对到人类参数名(码本)→ 离线把 recipe 渲染成近似预览看效果 → 写回自己照片让 PixCake 真实渲染。
 
 ## 参数码本
