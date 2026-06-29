@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pixcake-use MVP</title>
+  <style>
+    :root {
+      --fg: #1f2328;
+      --muted: #667085;
+      --border: #d0d7de;
+      --bg: #ffffff;
+      --soft: #f6f8fa;
+      --accent: #0f766e;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.55;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+    p {
+      margin: 8px 0;
+    }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre {
+      overflow: auto;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 24px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--soft);
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .accent {
+      color: var(--accent);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>pixcake-use MVP</h1>
+      <p class="muted">Read-only probes for building a PixCake parameter-level CLI.</p>
+    </header>
+
+    <section>
+      <h2>目标</h2>
+      <p>第一阶段不修改 PixCake 数据，不逆私有网络接口。MVP 只负责定位本地数据、生成快照、比较手动操作前后的变化，从而找出预设、项目和参数保存位置。</p>
+    </section>
+
+    <section>
+      <h2>命令</h2>
+      <table>
+        <thead>
+          <tr><th>命令</th><th>用途</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>doctor</code></td><td>检查 App、支持目录、数据库目录、偏好文件和运行进程。</td></tr>
+          <tr><td><code>snapshot</code></td><td>生成文件和 SQLite 摘要快照。</td></tr>
+          <tr><td><code>diff</code></td><td>比较两个快照，列出新增、删除、内容变化和 SQLite 表行数变化。</td></tr>
+          <tr><td><code>watch</code></td><td>在一个短窗口内抓手动 UI 操作前后的变化。</td></tr>
+          <tr><td><code>schema</code></td><td>查看单个 SQLite 数据库的表结构摘要。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>参数探测流程</h2>
+      <pre><code>python3 -m pixcake_use snapshot --name before
+# 在 PixCake 中只改一个参数，例如曝光 +0.50，然后保存新预设
+python3 -m pixcake_use snapshot --name after
+python3 -m pixcake_use diff snapshots/before.json snapshots/after.json</code></pre>
+      <p>每次只改一个参数，重复曝光、对比度、高光、阴影等字段，就能建立 UI 文案到内部字段的映射。</p>
+    </section>
+
+    <section>
+      <h2>边界</h2>
+      <p>这个项目只做自有账号、自有图片的本地自动化。它不绕过登录、付费功能、额度、签名或服务端校验。</p>
+    </section>
+  </main>
+</body>
+</html>

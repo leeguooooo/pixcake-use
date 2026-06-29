@@ -1,0 +1,16 @@
+{
+  "description": "Low-key cat portrait publish pass: lift the subject while preserving the black background.",
+  "params": [
+    { "pf": 3000, "fe": 0.66, "name": "Exposure" },
+    { "pf": 3002, "fe": 0.58, "name": "Contrast" },
+    { "pf": 21001, "fe": 0.57, "name": "EnhanceEditLuma" },
+    { "pf": 3003, "fe": 0.42, "name": "Highlights" },
+    { "pf": 3004, "fe": 0.72, "name": "Shadows" },
+    { "pf": 3020, "fe": 0.56, "name": "Whites" },
+    { "pf": 3021, "fe": 0.43, "name": "Blacks" },
+    { "pf": 90074, "fe": 0.58, "name": "Texture" },
+    { "pf": 90075, "fe": 0.56, "name": "Clarity" },
+    { "pf": 90014, "fe": 0.53, "name": "Vibrance" },
+    { "pf": 3006, "fe": 0.49, "name": "Saturation" }
+  ]
+}

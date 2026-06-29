@@ -1,0 +1,12 @@
+{
+  "description": "Cat detail descending test: confirmed PixCake color/detail sliders only.",
+  "params": [
+    { "pf": 44799, "fe": 0.95, "name": "Texture" },
+    { "pf": 3022, "fe": 0.875, "name": "Clarity" },
+    { "pf": 90016, "fe": 0.4, "name": "SharpeningAmount" },
+    { "pf": 90152, "fe": 0.725, "name": "RemoveFog" },
+    { "pf": 8200, "fe": 0.3, "name": "GrainAmount" },
+    { "pf": 91107, "fe": 0.6, "name": "LensManualVignetting" },
+    { "pf": 21001, "fe": 0.55, "name": "EnhanceEditLuma" }
+  ]
+}
